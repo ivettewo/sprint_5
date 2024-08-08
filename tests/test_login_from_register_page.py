@@ -1,4 +1,3 @@
-import time
 from conftest import static_data, driver, get_element
 from locators import Locators
 
@@ -13,8 +12,6 @@ def test_login_from_register_page(driver, static_data, get_element):
 
     login_submit_button = get_element(Locators.LOGIN_REGISTER_BUTTON_SUBMIT)
     login_submit_button.click()
-    time.sleep(1)
 
+    get_element(Locators.FILLINGS_BUTTON).is_displayed()
     assert driver.current_url == Locators.MAIN_LINK, f"Текущий URL - {driver.current_url}. \n После регистрации пользователь не попал на главную страницу"
-
-    driver.quit()

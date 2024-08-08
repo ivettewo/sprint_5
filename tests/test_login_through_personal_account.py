@@ -12,7 +12,7 @@ def test_login_through_personal_account(driver, static_data, get_element):
     get_element(Locators.PASSWORD_INPUT).send_keys(static_data['password'])
 
     get_element(Locators.LOGIN_REGISTER_BUTTON_SUBMIT).click()
-    time.sleep(1)
+
+    get_element(Locators.FILLINGS_BUTTON).is_displayed()
     assert driver.current_url == Locators.MAIN_LINK, f"Текущий URL - {driver.current_url}. \n После регистрации пользователь не попал на главную страницу"
 
-    driver.quit()

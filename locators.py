@@ -3,7 +3,7 @@ from selenium.webdriver.common.by import By
 # Сначала описание кнопки
 # затем идет слеш "/" который обозначает на какой странице кнопка
 class Locators:
-    AUTH_LOGIN_ELEMENTS = (By.CSS_SELECTOR, "div.Auth_login__3hAey")  # Элемент страницы авторизации для проверки наличия /login
+    AUTH_LOGIN_ELEMENTS = (By.XPATH, "//main//div[contains(@class, 'Auth_login')]")  # Элемент страницы авторизации для проверки наличия /login
     CONSTRUCTOR_BUTTON = (By.XPATH, "//p[text()='Конструктор']")  # Кнопка перехода в конструктор /
     EMAIL_INPUT = (By.XPATH, "//label[text()='Email']/following-sibling::input")  # Поле ввода email /login /register /forgot-password
     EMAIL_VALUE = (By.XPATH, "//input[@name='name']")  # Поле email для проверки значения /account/profile

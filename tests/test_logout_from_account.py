@@ -1,4 +1,3 @@
-import time
 from conftest import static_data, driver, get_element
 from locators import Locators
 
@@ -13,14 +12,10 @@ def test_logout_from_account(driver, static_data, get_element):
     get_element(Locators.PASSWORD_INPUT).send_keys(user_data['password'])
 
     get_element(Locators.LOGIN_REGISTER_BUTTON_SUBMIT).click()
-    time.sleep(1)
 
     get_element(Locators.PERSONAL_ACCOUNT_BUTTON).click()
-    time.sleep(1)
 
     get_element(Locators.LOGOUT_BUTTON).click()
-    time.sleep(1)
+    get_element(Locators.AUTH_LOGIN_ELEMENTS).is_displayed()
 
     assert driver.current_url == Locators.LOGIN_LINK, f"Ожидался URL {Locators.LOGIN_LINK}, но получен {driver.current_url}"
-
-    driver.quit()

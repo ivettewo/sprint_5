@@ -12,3 +12,10 @@
 - test_logout_from_account.py - Выход из аккаунта по кнопке «Выйти» в личном кабинете
 
 - test_navigate_between_tabs_selected.py - переходы к разделам: «Булки», «Соусы», «Начинки».
+
+# Фикстуры:
+- random_word - Генератор случайного слова. Диапазон от 6 до 8. Нижний регистр + цифры
+- random_short_password - Как и random_word, только меньший диапазон, от 1 до 5
+- static_data - Статическая дата
+- driver
+- get_element - Получаем элемент. Встроен WebDriverWait
